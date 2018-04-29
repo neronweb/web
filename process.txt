@@ -1,0 +1,26 @@
+
+Aston@DESKTOP-QRL0GO8 MINGW64 ~/aston (master)
+$ git add --all
+
+Aston@DESKTOP-QRL0GO8 MINGW64 ~/aston (master)
+$ git push origine master
+Everything up-to-date
+
+Aston@DESKTOP-QRL0GO8 MINGW64 ~/aston (master)
+$ git commit -m "mise a jour"
+[master 77e3c9b] mise a jour
+ 3 files changed, 120 insertions(+), 1 deletion(-)
+ create mode 100644 link.html
+ create mode 100644 pages/about.html
+
+Aston@DESKTOP-QRL0GO8 MINGW64 ~/aston (master)
+$ git push origine master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 3.14 KiB | 3.14 MiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:neronweb/web.git
+   2e57d69..77e3c9b  master -> master
+
