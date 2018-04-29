@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: Tahoma, Helvetica, sans-serif;
+}
+
+a {
+    color: crimson;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.box {
+    border: 1px solid red;
+}
+
+.box-titre {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color:red;
+}
+
+h2 {
+    color: red;
+  }
+
+h2 {
+    padding: 20px;
+}
+
+p {
+    color: red;
+}
+
+.article-border {
+    border: 1px solid #333;
+    padding: 5px;
+
+
+}

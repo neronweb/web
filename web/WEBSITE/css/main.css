@@ -1,0 +1,196 @@
+
+@charset 'UTF-8';
+
+body {
+margin: 0;
+padding: 0;
+font-family: 'Roboto', sans-serif;
+
+}
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+/**
+* Menu
+*/
+
+.navbar {
+
+    background-color: lightseagreen;
+    height: 45px;
+    color: #fff;
+    line-height: 45px;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    left: 0;
+    
+}
+
+.navbar a {
+
+    display: block;
+    padding: 0 20px;
+    transition: all 0.4s ease;
+    
+}
+
+.navbar a:hover {
+
+    background-color: mediumpurple;
+    transform: rotate(45deg) /*translate(-19px)*/
+}
+
+/**
+* SKY
+*/
+.sky {
+    background: linear-gradient(lightseagreen, royalblue);
+    height: 300px;
+    background-repeat: no-repeat;
+    color: #fff;
+    position: relative;
+    line-height: 300px;
+    overflow: hidden;
+}
+.sky-title {
+    position: relative;
+    z-index: 4;
+    margin: 0;
+     /*text-shadow: 2px 2px 5px royalblue;*/
+    /*border: 2px solid #333;*/
+    margin-left: 50px;
+}
+
+
+
+.sky-cloud1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    animation-name: cloudmoveX;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+
+.sky-cloud2 {
+    position: absolute;
+    top: 100px;
+    left: 130px;
+    width: 500px;
+   animation-name: cloudmoveX;  
+   animation-duration: 40s;  
+   animation-timing-function: linear;
+   animation-fill-mode: both;
+   animation-iteration-count: infinite;
+}
+
+/*.sky-nuage {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    animation-name: cloudmoveX;
+    animation-duration: 20s;
+   /* animation-timing-function: linear;*/
+   /* animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}*/
+
+@keyframes cloudmoveX {
+
+    from {
+        transform: translateX(-500px)
+    }
+    to {
+        transform:  translateX(1400px)
+    }
+}
+
+.container {
+    background-color: #F0F0F0;
+}
+
+.content {
+padding: 10px;
+}
+
+.content article {
+    /*margin: 10px;*/
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.content article:last-child {
+    margin: 0;
+}
+
+aside.sidebar {
+    background: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* aside collé avec sidebar, oblige sidebar a ne fonctionner qu'avec aside*/
+}
+.menu a {
+    display: block;
+}
+
+.footer {
+    background-color: #222;
+    color: #F0F0F0
+}
+
+
+
+@media screen and (min-width: 760px) {
+    .container {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    .content {
+        /*flex-grow: 2;*/
+        flex-basis: 60%;
+        order: 1; /*inverser ordre des colonnes 0 ou 1*/
+    }
+    .sidebar {
+        margin-top: 0;
+        /*flex-grow: 1;*/
+        flex-basis: 40%;
+
+     }
+
+     .footer{
+         display: flex ;
+         justify-content: space-evenly;
+
+     }
+     /*
+     .associate {}
+
+     .network {}
+
+     .newsletter {}
+    
+    */ 
+}
+
+@media screen and (min-width: 1024px) {
+    .footer {
+        background: blue;
+    }   
+}
+
+
