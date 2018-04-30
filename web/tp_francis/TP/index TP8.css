@@ -1,0 +1,29 @@
+/* le symbole dièze # en debut d'element permet de definir l'attribut ID  */
+#p1{
+    color: blue;
+}
+
+/* le symbole point . en debut d'element permet de definir l'attribut CLASS */
+
+.p1{
+color: red;
+}
+
+/* ATTENTION : Chaque attibut ID doit avoir une valeur unique 
+alors que des attribut CLASS peuvent avoir la même valeur*/
+
+/* ATTENTION : Chaque attibut CLASS peuvent avoir la même valeur 
+et permet ainsi d'appliquer le meme style à differents types d'élément html
+d'un groupe et à différent elements html ciblés   */
+
+/*on peut appliquer un attribut ID et class à un element html
+ afin de lui appliquer un style semi generale et un style particulier  
+ En cas de conflit c'est le parametre du style le plus précis 
+ qui sera appliqué  soit celui de l' ID qui est au plus pres de l'élément */
+ 
+ #para{
+     font-weight: bold;
+     color: green
+ }
+
+ 
