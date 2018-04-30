@@ -4,79 +4,91 @@
 <head>
     <meta charset="utf-8" />
     <title> utilisation des ancres</title>
+</head>
 
 
-    <body>
+<body>
 
-        <h1>
-            <strong>PPE1 les lien internes et externes</strong>
-        </h1>
+    <h1>
+        <strong>PPE1 les lien internes et externes</strong>
+    </h1>
 
-        <p>Ancrage: </p>
-        <!--Un lien, en HTML, va généralement servir à "transporter" un utilisateur d'un endroit vers un autre 
+    <p>Ancrage: </p>
+    <!--Un lien, en HTML, va généralement servir à "transporter" un utilisateur d'un endroit vers un autre 
             après que celui-ci ait cliqué dessus.Pour créer des liens en HTML, nous allons utiliser l’élément 
             a accompagné de son attribut href (hypertext reference) qui va prendre comme valeur la cible du lien.-->
 
-        <!--distinguer deux grands types de liens : les liens permettant de se déplacer 
+    <!--distinguer deux grands types de liens : les liens permettant de se déplacer 
             d'une page vers une autre à travers un même site et les liens permettant de se rendre sur d’autres sites
             Dans les deux cas, seule la façon dont on va construire la valeur de l’attribut href va changer.-->
-        <br>
-        <p>Les liens internes :Les liens internes vont être des liens ramenant vers d’autres pages au sein d’un même site. On
-            dit que la valeur est relative car on va devoir indiquer l’adresse de la page de destination relativement à l’adresse
-            de la page de départ
-            <br> Pour créer des liens internes, il faut donc distinguer trois cas :
-            <ol>
-                <li>Le cas où la page de départ et celle de destination sont dans le même dossier ;</li>
-                <li>Le cas où la page de destination est dans un sous-dossier par rapport à la page de départ ;</li>
-                <li>Le cas où la page de destination est dans un dossier parent par rapport à la page de départ.</li>
-            </ol>
-        </p>
-        <p>liens de la page de depard vers une page dans le meme dossier</p>
-        <p>Cliquer
-            <a href="index tp1.html">ici></a> pour acceder à la page "meme dossier</p>
-        <br>
-        <p>liens de la page de depard vers une page dans un dossie parent</p>
-        <p>
-            Cliquer
-            <a href="../balises.html">ICI</a> pour accedze à la page dans dossier parent</p>
-            <!--De même, si on souhaite créer un lien vers une page qui est à deux niveaux hiérarchiques d’écart de notre page de départ, 
+    <br>
+    <p>Les liens internes :Les liens internes vont être des liens ramenant vers d’autres pages au sein d’un même site. On dit
+        que la valeur est relative car on va devoir indiquer l’adresse de la page de destination relativement à l’adresse
+        de la page de départ
+        <br> Pour créer des liens internes, il faut donc distinguer trois cas :
+        <ol>
+            <li>Le cas où la page de départ et celle de destination sont dans le même dossier ;</li>
+            <li>Le cas où la page de destination est dans un sous-dossier par rapport à la page de départ ;</li>
+            <li>Le cas où la page de destination est dans un dossier parent par rapport à la page de départ.</li>
+        </ol>
+    </p>
+    <p>liens de la page de depard vers une page dans le meme dossier</p>
+    <p>Cliquer
+        <a href="index tp1.html">ici</a> pour acceder à la page "meme dossier</p>
+    <br>
+    <p>liens de la page de depard vers une page dans un dossie parent</p>
+    <p>
+        Cliquer
+        <a href="../balises.html">ICI</a> pour accedze à la page dans dossier parent</p>
+    <!--De même, si on souhaite créer un lien vers une page qui est à deux niveaux hiérarchiques d’écart de notre page de départ, 
                 il faudra soit indiquer le nom des deux sous-dossiers, soit indiquer deux fois soit : "" ../../ fichier-parent.html".-->
-        <br>
-        <p>liens de la page de depard vers une page dans un sous-dossier </p>
-        <br>
-        <p>Cliquer
-            <a href="dossier test 1/form.html">ICI</a>pour acceder à une page d'un sous dossier</p>
-        <br>
-        <a href="#openErp">openErp</a>
-        <br>
-        <a href="#facturation">facture en java></a>
-        <br>
-        <a href="#paiementenligne">paiement en ligne></a>
-        <br>
-        <br>
-        </p>
-        <strong>les liens externes: l’attribut href prend une URL complète en valeur, on parle de valeur absolue</strong>
-        <p>Cliquez sur
-            <a href="http://wikipedia.org">ce lien </a>pour aller sur Wikipédia.</p>
+    <br>
+    <p>liens de la page de depard vers une page dans un sous-dossier </p>
+    <br>
+    <p>Cliquer
+        <a href="dossier test 1/form.html">ICI</a>pour acceder à une page d'un sous dossier</p><br>
 
+<p>L’attribut target ("cible")</p><br>
+<p>Si vous voulez que le lien s’ouvre dans un nouvel onglet ou une nouvelle fenêtre 
+    afin que le visiteur ne perde pas la page de votre site. On va pouvoir faire cela avec l’attribut target.</p>
+
+    <p>Page de départ</p>
+        
+    <!--Ce lien va s'ouvrir dans un nouvel onglet ou fenêtre-->
+    <p>cliquez ce lien pour aller Vers <a href="http://wikipedia.org" target="_blank">Wikipédia</a></p>
+
+
+    <br>
+    <a href="#openErp">openErp</a>
+    <br>
+    <a href="#facturation">facture en java></a>
+    <br>
+    <a href="#paiementenligne">paiement en ligne></a>
+    <br>
+    <br>
+    </p>
+    <strong>les liens externes: l’attribut href prend une URL complète en valeur, on parle de valeur absolue</strong>
+    <p>Cliquez sur
+        <a href="http://wikipedia.org">ce lien </a>pour aller sur Wikipédia.</p>
+
+    <h2>
+        <id="openErp">PGI
+    </h2>
+    <p>contexte 1</p>
+    <p>
+        <h3>
+            <id="facturation">Facture en Java
+        </h3>
+    </p>
+    <p> ...Description du contexte 2...</p>
+    <p>
         <h2>
-            <id="openErp">PGI
-        </h2>
-        <p>contexte 1</p>
-        <p>
-            <h3>
-                <id="facturation">Facture en Java
-            </h3>
-        </p>
-        <p> ...Description du contexte 2...</p>
-        <p>
-            <h2>
-                <id="paiementenligne">EDM Droit </h2>
-        </p>
+            <id="paiementenligne">EDM Droit </h2>
+    </p>
 
-        <p>contexte 3</strong>
-        </p>
+    <p>contexte 3</strong>
+    </p>
 
-    </body>
+</body>
 
 </html>

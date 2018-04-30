@@ -1,0 +1,67 @@
+<!doctype HTML>
+<HTML>
+
+<head>
+    <html lang="fr">
+    <meta charset="UTF-8">
+</head>
+
+
+<body>
+    <h2>Les différents formats d’image</h2>
+    <ul>
+        <li>Le JPG ou JPEG : bonne compression et bonne qualité </li>
+        <li>Le PNG : conçu pour remplacer le GIF non animé, gere très bien la transparence</li>
+        <li>Le GIF : vieux format à n'utiliser que pour les GIF animés</li>
+        <li>Le BITMAP: bonne prise en charge par les navigateurs, mauvaise compression et qualité ainsi que lourdes à charger</li>
+    </ul>
+    <br>
+    <p> la fameuse balise qui va nous permettre d'insérer une image est &lt;img&gt; C'est une balise de type orpheline (comme &lt;br&gt;).</p>
+   <p>la fameuse balise qui va nous permettre d'insérer des caracteres reservés <br>
+    comme les chevrons est &amp;lt;  et  &amp;gt;  ce qui donne: &lt;img&gt;<br>
+    comme l'esperluette &amp;amp;<br>
+    comme un caractere d'espace  &amp;nbsp; &nbsp;&nbsp;&nbsp;&nbsp; *4 donne 4 espaces dans le texte.</p> <br>
+
+    <p>La balise doit être accompagnée de 2 attributs obligatoires : </p>
+    <ul>
+        <li> src : il permet d'indiquer où se trouve l'image que l'on veut insérer. Vous pouvez soit mettre un chemin en absolu
+            (ex. : http://www.site.com/fleur.png), soit mettre le chemin en relatif (ce qu'on fait le plus souvent). Ainsi,
+            si votre image est dans un sous-dossier images vous devrez taper : src="images/fleur.png </li>
+        <li>Le PNG : conçu pour remplacer le GIF non animé, gere très bien la transparence</li>
+        <br>
+        <li>alt : cela signifie "texte alternatif". On doit toujours indiquer un texte alternatif à l'image, c'est-à-dire un
+            court texte qui décrit ce que contient l'image. Ce texte sera affiché à la place de l'image si celle-ci ne peut
+            pas être téléchargée (ça arrive), ou sur les navigateurs de personnes handicapées (non-voyants) qui ne peuvent
+            malheureusement pas "voir" l'image. Cela aide aussi les robots des moteurs de recherche pour les recherches d'images.
+            Pour la fleur, on mettrait par exemple : alt="Une fleur".</li>
+    </ul>XS
+    <br>
+    <p>Les images doivent se trouver obligatoirement à l'intérieur d'un paragraphe &lt;p&gt;). Voici un exemple d'insertion d'image
+        :
+    </p>
+
+    <p>
+        <img src="../../top10.jpg" alt=" Ma Photo" />
+
+        <!-- pour mettre une legende : <figcaption>ma photo</figcaption> fonctionne 
+            mais à utilise avec la balise figure pour rendre la legende et l'image solidaires -->
+    </p>
+    <br>
+    <h2>Les figures (balise HTML5)</h2>
+    <!--tout ce qui vient illustrer le texte est une figure. Nous allons ici nous intéresser aux images, mais contrairement 
+    à ce qu'on pourrait croire, les figures ne sont pas forcément des images : un code source aussi illustre le texte. -->
+    <p>Création d'une figure </p>
+    <figure>
+        <img src="../images/bloc notes1.jpg" alt="Bloc-Notes" />
+    </figure>
+    <p>Une figure est le plus souvent accompagnée d'une légende. Pour ajouter une légende, utilisez la balise "figcaption" à
+        l'intérieur de la balise "figure", comme ceci : </p>
+    <br>
+
+    <figure>
+        <img src="../images/bloc notes 2.jpg" alt="Bloc-Notes" />
+        <figcaption>Le logiciel Bloc-Notes</figcaption>
+    </figure>
+</body>
+
+</HTML>
