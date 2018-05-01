@@ -1,0 +1,104 @@
+/* 
+Les propriétés CSS de type « text- »
+
+Les propriétés CSS de type text- vont nous permettre de changer la mise en forme de nos textes et leur apparence.
+
+A la différence des propriétés de type font-, les propriétés de type text- ne sont pas dépendantes de la police utilisée.
+
+Dans cette partie, nous allons étudier les propriétés CSS de type text- suivantes :
+
+    La propriété text-align (gère l'alignement) ;
+    La propriété text-transform (gère la mise en majuscules / minuscules) ;
+    La propriété text-decoration (gère la décoration) ;
+    La propriété text-indent (gère l'indentation) ;
+    La propriété text-shadow (gère les ombres).
+
+
+*/
+h1{
+    color: purple;
+    text-align: center;
+   text-transform: uppercase;
+   text-decoration: underline;
+}
+
+
+.p1{
+    color: #7A01F8;
+    text-align: left;
+    text-transform: lowercase;
+    text-decoration: line-through;
+}
+
+
+.p2{
+    color: RGB(255,000,255);
+    text-align: right;
+    text-transform: capitalize;
+    text-decoration: overline
+
+}
+
+.p3{
+    color: green;
+    text-align: end;
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+/*
+La propriété CSS text-align
+
+La propriété CSS text-align va nous permettre de définir l’alignement 
+de notre texte.
+
+    Left : Le texte sera aligné à gauche (par défaut) ;
+    Right : Le texte sera aligné à droite ;
+    Center : Le texte est centré ;
+    Justify : Le texte est justifié ;
+    Inherit : Hérite de la valeur de l’élément parent.
+
+*/
+
+/*
+La propriété CSS text-transform
+
+La propriété CSS text-transform va nous permettre de transformer 
+un texte ou une partie d’un texte en majuscules ou en minuscules.
+
+Cette propriété nous permet de choisir parmi cinq valeurs :
+
+    Lowercase : Met tout le texte en minuscules ;
+    Uppercase : Met tout le texte en majuscules ;
+    Capitalize : Met la première lettre de chaque mot en majuscule ;
+    Inherit : Hérite de la valeur de l’élément parent ;
+    None : Pas de transformation du texte. Utile pour annuler 
+    une transformation par défaut donnée par héritage.
+
+
+*/
+/*
+La propriété CSS text-decoration
+
+La propriété CSS text-decoration va nous permettre d’ajouter ou 
+d’enlever des décorations à nos textes.
+
+Cette propriété accepte six valeurs différentes :
+
+    Underline : Le texte sera souligné ;
+    Overline : Une ligne apparaît au dessus du texte ;
+    Line-through : Le texte sera barré ;
+    Inherit : Hérite de la valeur de l’élément parent ;
+    Initial : Utilise la valeur par défaut de la propriété ;
+    None : Pas de décoration.
+
+Cette propriété va par exemple nous permettre d’enlever le 
+soulignement automatique qui apparaît dès que l’on crée un lien.
+
+
+*/
+
+

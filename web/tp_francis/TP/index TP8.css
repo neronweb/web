@@ -3,7 +3,8 @@
     color: blue;
 }
 
-/* le symbole point . en debut d'element permet de definir l'attribut CLASS */
+/* le symbole point . en debut d'element permet de definir la balise 
+ou l'attribut CLASS de la balise*/
 
 .p1{
 color: red;
@@ -27,3 +28,48 @@ d'un groupe et à différent elements html ciblés   */
  }
 
  
+ /* 
+ H1 {
+fontfamily:arial;
+}
+Tous les éléments de type H1
+seront dans la police arial
+
+BODY { fontfamily:times; }
+le texte de la page sera en times
+par défaut.
+
+H1,H2,H3 {
+fontsize:large;color: red;
+}
+Les éléments de type H1, H2 et H3
+seront en grand (large) et en rouge
+
+LI B {
+color: blue;
+}
+Les éléments en gras qui sont à
+l’intérieur d’une liste seront en bleu
+
+  */
+
+  /*
+Quelques propr iétés :
+TEXTE
+● Font-family : la police (times, arial, helevetica …)
+● Font-size : (small, medium, large, x-large…)
+● Font-weight (normal, bold, 120%)
+● Color : couleur du texte (black, green, #00FF00)
+● text-align: left, center ou right
+FOND
+● background-color : la couleur du fond (idem)
+● Background-image : image de fond url("truc.jpg")
+BORDURES
+● Border-style : solid, dotted, dashed, solid, none
+● Border-width : largeur (1px par exemple)
+● Border-color : red, #00FF00, …
+LISTES
+● List-style-type : type de liste (disc, circle, square, decimal,
+lower-roman ...)
+
+ */

@@ -1,0 +1,61 @@
+/* 
+La propriété CSS line-height va nous permettre de choisir la distance ou 
+l’écartement entre deux lignes de texte.
+
+Cette propriété accepte des valeurs absolues ou relatives. Généralement, 
+on fixera la valeur de line-height à 1,5 fois la taille de nos textes.
+
+*/
+
+h1{
+    color: purple;
+   
+}
+
+
+.p1{
+    color: #7A01F8;
+    line-height: 20px;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+}
+
+
+.p2{
+    color: RGB(255,000,255);
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: -25px;
+
+
+}
+
+.p3{
+    color: green;
+
+
+}
+
+
+/*
+Les propriétés CSS letter-spacing et word-spacing vont nous permettre 
+respectivement de définir l’espace entre les lettres et entre les mots 
+dans un texte.
+
+A noter que les valeurs des espaces précisées pour letter-spacing 
+et word-spacing viendront s’ajouter à l’espace par défaut.
+
+Pour enlever une partie de l’espace ou même inverser les lettres 
+ou les mots, on peut donner des valeurs négatives.
+
+*/
+
+/*
+La 
+
+
+*/
+
+/*
+L
+*/
