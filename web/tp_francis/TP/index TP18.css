@@ -1,0 +1,77 @@
+/* 
+out élément HTML possède une largeur et une hauteur. La hauteur par 
+défaut d’un élément HTML est déterminée par son contenu. Ainsi, 
+un paragraphe, selon qu’il occupe une ou deux lignes, ne possèdera 
+pas la même hauteur par défaut.
+
+La largeur d’un élément, en revanche, est avant tout déterminée 
+par son type : en effet, les éléments de type block occuperont par
+défaut tout l’espace disponible. Les éléments de type inline, en 
+revanche, n’occuperont que la largeur nécessaire à leur contenu.
+
+*/
+
+div{
+    /*Couleur de fond (bleu-vert)*/
+    background-color: #088;
+    /*Largeur de l'élément en soi*/
+    width: 500px;
+   
+}
+
+h1{
+     /*Largeur de l'élément en soi*/
+    width: 300px;
+    background-color: white;
+     /*Hauteur*/
+    height: 100px;
+    border: 2px solid black;
+}
+
+.para1{
+    width: 400px;
+    background-color: red;
+    padding: 60px;
+    border: 30px solid #a04;
+}
+
+/*
+Modifier la hauteur et la largeur d’un élément
+
+Pour modifier la hauteur par défaut d’un élément, nous allons utiliser 
+la propriété height.
+
+Cette propriété peut prendre des valeurs absolues, relatives 
+(utiles dans le cas d’un site responsive) ou la valeur « auto » 
+(la hauteur sera calculée automatiquement par le navigateur).
+
+Pour modifier la largeur par défaut d’un élément, nous allons 
+cette fois-ci utiliser la propriété width. Cette propriété peut 
+prendre les mêmes valeurs que la propriété height.
+
+Regardez par exemple l’exemple suivant où l’on définit la largeur et 
+la hauteur de notre élément div. On lui donne également une couleur 
+de fond afin de bien voir sa taille.
+*/
+
+/*
+Hauteur, largeur et modèle des boîtes
+
+Pour régler efficacement la hauteur et la largeur d’un élément, il faut 
+avant tout bien avoir compris le modèle des boîtes.
+
+En effet, vous devez bien vous rappeler que vous ne définissez que la
+ hauteur et la largeur du contenu de l’élément en soi. Les tailles 
+ des marges intérieures, extérieures et des bordures viendront s’ajouter 
+ à cette hauteur et à cette largeur afin de former la taille totale de l’élément.
+
+Si vous ne faîtes pas attention, vous risquez de créer des éléments 
+plus grands au final que leurs éléments parents, ce qui est généralement 
+considéré comme une mauvaise pratique en HTML et en CSS. 
+
+
+*/
+
+/*
+L
+*/
