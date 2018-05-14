@@ -1,0 +1,14 @@
+{
+  "name": "jquery-aston",
+  "version": "1.0.0",
+  "description": "jquery project",
+  "main": "jscript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Francis",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
