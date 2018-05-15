@@ -1,7 +1,6 @@
 $(document).ready(function () {
     // ici je suis sur que le DOM est prêt à être manipuler.
 
-
     // On récupère mon champ input sous forme d'objet.
     var input = $('.todo-input');
 
@@ -10,15 +9,18 @@ $(document).ready(function () {
 
     // Tableau de stockage pour les taches
     var tasks = [];
-
     var data = localStorage.getItem('todo');
 
     if (data) {
-        tasks = JSON.parse(data);   //inverse de stringifie
+        tasks = JSON.parse(data);
     }
-    tasks.forEach(function (task) {
-        list.append(taskToHTML(task));
 
+    // On parcours le tableau des taches et on les ajoutes à la list (ul).
+    tasks.forEach(function (task) {
+        $(this).delay(1000).queue(function () {
+            $(taskToHTML(task)).hide().appendTo(list).fadeIn(2000);
+            $(this).dequeue()
+        });
     });
 
     // On ajout un écouteur d'évènement "keyup" sur le champ text.
@@ -41,13 +43,11 @@ $(document).ready(function () {
 
                 // Ajout de l'objet task nouvellement créé dans le tableau tasks.
                 tasks.push(task);
-
                 localStorage.setItem('todo', JSON.stringify(tasks));
-
 
                 var li = taskToHTML(task);
 
-                list.append(li);
+                $(li).hide().appendTo(list).fadeIn(2000);
                 input.val('');
             }
         }
@@ -58,16 +58,13 @@ $(document).ready(function () {
 
         var element = $(event.target);
 
-        if (element.hasClass('todo-delete')) {
-            event.preventDefault();
-
+        if(element.hasClass('todo-delete')) {
             var id = element.parent().attr('id');
             var index = tasks.findIndex(function (task) {
                 return task.id === id;
             });
 
             tasks.splice(index, 1);
-
             localStorage.setItem('todo', JSON.stringify(tasks));
 
             element.parent().fadeOut(1000, function () {
@@ -75,9 +72,7 @@ $(document).ready(function () {
             });
         }
 
-        if (element.hasClass('todo-list-text')) {
-            event.preventDefault();
-
+        if(element.hasClass('todo-list-text')) {
             element.on('keyup', function (e) {
                 if (e.keyCode === 13) {
                     e.preventDefault();
@@ -90,7 +85,6 @@ $(document).ready(function () {
                     var task = tasks[index];
                     task.text = e.target.innerText;
                     localStorage.setItem('todo', JSON.stringify(tasks));
-                    console.log(task);
                 }
             });
         }
@@ -101,9 +95,9 @@ $(document).ready(function () {
 function taskToHTML(task) {
     var li = '<li id="' + task.id + '" class="list-group-item">';
     li += '<div class="todo-list-text single-line" contenteditable="true">' + task.text + '</div>';
-    li += ' <i class="fa fa-times-circle  todo-delete"></i>';
-    li += ' <i class="fa fa-check-square todo-edit"></i>';
+    li += ' <i class="fa fa-trash-alt todo-delete"></i>';
+    li += ' <i class="fa fa-pencil-alt todo-edit"></i>';
     li += '</li>';
+
     return li;
 }
-
