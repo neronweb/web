@@ -1,73 +1,109 @@
 $(document).ready(function () {
-    // je suis sur que le DOM est pret à être manipulé
+    // ici je suis sur que le DOM est prêt à être manipuler.
 
 
-    // on recuper mon champ input sous forme d'objet
+    // On récupère mon champ input sous forme d'objet.
     var input = $('.todo-input');
 
-    // on recupere la liste ul sous forme d'objet
+    // On récupère la liste ul sous forme d'objet.
     var list = $('.todo-list');
 
-    //dseclaration tableau de stockage pour les taches
+    // Tableau de stockage pour les taches
     var tasks = [];
 
-    // on ajout,un ecouteur d'evenement "keyup" sur le champ texte
-    input.on('keyup', function (event) {
+    var data = localStorage.getItem('todo');
 
+    if (data) {
+        tasks = JSON.parse(data);   //inverse de stringifie
+    }
+    tasks.forEach(function (task) {
+        list.append(taskToHTML(task));
+        
+    });
+
+    // On ajout un écouteur d'évènement "keyup" sur le champ text.
+    input.on('keyup', function (event) {
         if (event.keyCode === 13) {
-            // code 13 c'est le code de la touche entrée
+            event.preventDefault();
+
             var text = event.target.value;
-                // on verifie si le text n'est pas vide (espace) avvec la method trim
-            if (text.trim()) {      // trim supprime les espaces dans une chaine de caracteres
-                var task = {        // creation de des colonnes de la table
+
+            // On vérifie si le text n'est pas vide (espace) avec la méthode trim.
+            if (text.trim()) {
+
+                // On créé un objet task avec des propriétés.
+                var task = {
                     id: 'task-' + (tasks.length + 1),
-                    // task et tasks sont deux var differentes, tasks avec "s" est un tableau
                     text: text,
                     date: Date.now(),
                     done: false
                 };
+
+                // Ajout de l'objet task nouvellement créé dans le tableau tasks.
                 tasks.push(task);
 
-                console.log(tasks);
+                localStorage.setItem('todo', JSON.stringify(tasks));
 
-                var li ='<li id="'+task.id+ '" class="list-group-item">';
-                li += '<span class="todo-list-text">'+task.text+'</span>';
-                li += '<i class="fa fa-trash-alt todo-delete "></i>'; // mettre une icone poubelle
-                li += '<i class="fa fa-pencil-alt todo-edit"></i>';
-                li +='</li>';
+
+                var li = taskToHTML(task);
 
                 list.append(li);
-                //console.log(event.target.value);
-                input.val('');   // vider le champ input
-
+                input.val('');
             }
         }
     });
 
-    list.on('click','li', function (event) {
-        var element =$(event.target); // avec le  $ on pourra le traiter avec jquery
+    list.on('click', 'li', function (event) {
+        event.preventDefault();
 
-        if(element.hasClass('todo-delete')) {
+        var element = $(event.target);
 
-           var id = element.parent().attr('id');
+        if (element.hasClass('todo-delete')) {
+            event.preventDefault();
 
-           var index = tasks.findIndex(function (task) {
-            return task.id === id;
+            var id = element.parent().attr('id');
+            var index = tasks.findIndex(function (task) {
+                return task.id === id;
             });
-            tasks.splice(index,1);
-            element.parent().fadeOut(1000, function(){
+
+            tasks.splice(index, 1);
+
+            localStorage.setItem('todo', JSON.stringify(tasks));
+
+            element.parent().fadeOut(1000, function () {
                 $(this).remove();
             });
+        }
 
-            //console.log(id);
-            //console.log(index,tasks);
+        if (element.hasClass('todo-list-text')) {
+            event.preventDefault();
+
+            element.on('keyup', function (e) {
+                if (e.keyCode === 13) {
+                    e.preventDefault();
+
+                    var id = element.parent().attr('id');
+                    var index = tasks.findIndex(function (task) {
+                        return task.id === id;
+                    });
+
+                    var task = tasks[index];
+                    task.text = e.target.innerText;
+                    localStorage.setItem('todo', JSON.stringify(tasks));
+                    console.log(task);
+                }
+            });
         }
-        if(element.hasClass('todo-edit')){
-            
-        }
-        //console.log(element.hasClass('todo-delete'));
-        //alert($(this).text());
-    
-// rendre la tache "clickable pour voir le contenu"
+
+    });
 });
-});
+
+function taskToHTML(task) {
+    var li = '<li id="' + task.id + '" class="list-group-item">';
+    li += '<div class="todo-list-text single-line" contenteditable="true">' + task.text + '</div>';
+    li += ' <i class="fa fa-trash-alt todo-delete"></i>';
+    li += ' <i class="fa fa-pencil-alt todo-edit"></i>';
+    li += '</li>';
+    return li;
+}
+
